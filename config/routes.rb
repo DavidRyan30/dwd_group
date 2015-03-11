@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/hohome'
+
   resources :list_items
 
   resources :lists

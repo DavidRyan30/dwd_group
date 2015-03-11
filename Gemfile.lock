@@ -129,6 +129,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
+  json
   pg
   rails (= 4.1.1)
   rails_12factor (~> 0.0.3)
