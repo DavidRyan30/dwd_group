@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'static_pages/hohome'
+  get 'static_pages/home'
 
   resources :list_items
 
