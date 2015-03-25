@@ -4,7 +4,6 @@ class CreateListItems < ActiveRecord::Migration
       t.integer :quantity
       t.string :name
       t.string :list_id
-
       t.timestamps
     end
   end

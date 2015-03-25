@@ -10,6 +10,9 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @list = set_list
+    puts @list.user.id
+
   end
 
   # GET /lists/new
@@ -25,7 +28,7 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
-
+    @list.user = current_user
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
@@ -69,6 +72,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:user, :date, :note)
+      params.require(:list).permit(:date, :note)
     end
 end

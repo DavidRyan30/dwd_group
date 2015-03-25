@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310150638) do
+ActiveRecord::Schema.define(version: 20150325110512) do
 
   create_table "list_items", force: true do |t|
     t.integer  "quantity"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20150310150638) do
   end
 
   create_table "lists", force: true do |t|
-    t.integer  "user"
-    t.string   "date"
+    t.integer  "user_id"
+    t.date     "date"
     t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20150310150638) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
+    t.string   "password_digest"
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end
