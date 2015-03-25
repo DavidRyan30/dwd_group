@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @list.user.f_name%> <%= @list.user.s_name%> 
+  <%= @list.user.f_name %> <%= @list.user.s_name %> 
 </p>
 
 <p>
@@ -13,6 +13,11 @@
 <p>
   <strong>Note:</strong>
   <%= @list.note %>
+</p>
+
+<p>
+	<strong>List Items</strong>
+	
 </p>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
