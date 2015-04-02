@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :remember_token
+
     before_save do |user| 
       	user.email = email.downcase 
     	  user.remember_token = SecureRandom.urlsafe_base64
