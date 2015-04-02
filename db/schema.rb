@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150325110512) do
 
   create_table "lists", force: true do |t|
     t.integer  "user_id"
-    t.date     "date"
     t.string   "note"
     t.datetime "created_at"
     t.datetime "updated_at"
