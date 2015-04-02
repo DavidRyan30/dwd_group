@@ -19,9 +19,9 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="field" hidden="true">
     <%= f.label :list_id %><br>
-    <%= f.text_field :list_id %>
+    <%= f.text_field :list_id, :value => params[:id]%>
   </div>
   <div class="actions">
     <%= f.submit %>

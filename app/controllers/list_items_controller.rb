@@ -28,7 +28,7 @@ class ListItemsController < ApplicationController
 
     respond_to do |format|
       if @list_item.save
-        format.html { redirect_to @list_item, notice: 'List item was successfully created.' }
+        format.html { redirect_to '/lists/', notice: 'List item was successfully created.' }
         format.json { render :show, status: :created, location: @list_item }
       else
         format.html { render :new }
@@ -50,6 +50,7 @@ class ListItemsController < ApplicationController
       end
     end
   end
+
 
   # DELETE /list_items/1
   # DELETE /list_items/1.json

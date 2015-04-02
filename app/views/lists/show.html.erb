@@ -17,8 +17,14 @@
 
 <p>
 	<strong>List Items</strong>
+  <% @list_items.each do |i|%>
+   <p>
+    <span>Quantity: <%= i.quantity %></span> |
+    <span>Item: <%= i.name%></span>
+   </p>
+  <% end %>
 
 </p>
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Add Items', '/item/'+@list.id.to_s%> |
+<%= link_to 'Edit Note', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>

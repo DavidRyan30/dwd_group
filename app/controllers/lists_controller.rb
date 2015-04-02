@@ -11,7 +11,7 @@ class ListsController < ApplicationController
   # GET /lists/1.json
   def show
     @list = set_list
-    puts @list.user.id
+    @list_items = @list.list_items.all()
 
   end
 
@@ -39,6 +39,7 @@ class ListsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /lists/1
   # PATCH/PUT /lists/1.json
@@ -69,7 +70,9 @@ class ListsController < ApplicationController
     def set_list
       @list = List.find(params[:id])
     end
-
+    # def item_params
+    #   params.require(:list_item).permit(:quantity, :name, :list_id)
+    # end
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
       params.require(:list).permit(:date, :note)
