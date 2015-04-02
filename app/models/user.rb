@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
     before_save do |user| 
       	user.email = email.downcase 
-    	user.remember_token = SecureRandom.urlsafe_base64
+    	  user.remember_token = SecureRandom.urlsafe_base64
     end
 	has_many :lists
 	validates :password, presence: true, length: { minimum: 6 }

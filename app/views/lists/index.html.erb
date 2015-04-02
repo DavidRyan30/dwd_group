@@ -1,9 +1,8 @@
 <h1>Listing lists</h1>
 
-<table>
+<table class="table table-responsive">
   <thead>
     <tr>
-      <th>User</th>
       <th>Date</th>
       <th>Note</th>
       <th colspan="3"></th>
@@ -13,12 +12,11 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
-        <td><%= list.user %></td>
         <td><%= list.date %></td>
         <td><%= list.note %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show & Add Items', list %></td>
+        <td><%= link_to 'Edit Note', edit_list_path(list) %></td>
+        <td><%= link_to 'Delete List', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

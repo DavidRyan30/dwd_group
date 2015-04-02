@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :lists
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'static_pages#home'

@@ -8,7 +8,7 @@ gem 'rails', '4.1.1'
 group :development do
   gem 'sqlite3'
 end
-
+gem 'rails_admin', :git => "https://github.com/sferik/rails_admin.git"
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
