@@ -5,6 +5,15 @@ class ListItemsController < ApplicationController
   # GET /list_items.json
   def index
     @list_items = ListItem.all
+
+    list_items = ListItem.find_by_list_id(params[:list_id])
+    puts list_items
+    if list_items
+         render json: list_items
+      else
+         render json: 404
+      end
+
   end
 
   # GET /list_items/1
