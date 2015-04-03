@@ -4,13 +4,13 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = current_user.lists.all()
+    
 
-    if params[:email] && params[:email] == current_user.email
-      puts params[:email].to_s
-      render json: @lists
+    if params[:email]
+      user = User.find_by_email(params[:email])
+      render json: user.lists.all()
     else
-      @lists
+      @lists = current_user.lists.all()
     end
     
   end
