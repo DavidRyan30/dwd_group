@@ -5,6 +5,13 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = current_user.lists.all()
+
+    if params[0] && params[0] == current_user.id
+      render :json @lists
+    else
+      @lists
+    end
+    
   end
 
   # GET /lists/1
