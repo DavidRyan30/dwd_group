@@ -7,7 +7,7 @@ class ListsController < ApplicationController
     @lists = current_user.lists.all()
 
     if params[0] && params[0] == current_user.id
-      render :json @lists
+      render json: @lists
     else
       @lists
     end
