@@ -7,7 +7,9 @@ class ListsController < ApplicationController
     
 
     if params[:email]
+      puts params[:email]
       user = User.find_by_email(params[:email])
+      puts user.f_name
       render json: user.lists.all()
     else
       @lists = current_user.lists.all()
