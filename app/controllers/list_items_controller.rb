@@ -6,10 +6,10 @@ class ListItemsController < ApplicationController
   def index
     @list_items = ListItem.all
 
-    list_items = ListItem.find_by_list_id(params[:list_id])
-    puts list_items
+    list = List.find_by_id(params[:list_id])
+    puts list.list_items.all
     if list_items
-         render json: list_items
+         render json: list.list_items.all
       else
          render json: 404
       end
