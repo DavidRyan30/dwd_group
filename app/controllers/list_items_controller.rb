@@ -8,7 +8,7 @@ class ListItemsController < ApplicationController
 
     list = List.find_by_id(params[:list_id])
     puts list.list_items.all
-    if list_items
+    if list
          render json: list.list_items.all
       else
          render json: 404
