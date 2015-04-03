@@ -6,7 +6,8 @@ class ListsController < ApplicationController
   def index
     @lists = current_user.lists.all()
 
-    if params[0] && params[0] == current_user.id
+    if params[:email] && params[:email] == current_user.email
+      puts params[:email].to_s
       render json: @lists
     else
       @lists
