@@ -4,8 +4,6 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    
-
     if params[:email]
       puts params[:email]
       user = User.find_by_email(params[:email])
@@ -38,8 +36,12 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
-    puts current_user
-    @list.user = current_user
+    if params[:user_id]
+      @list.user = User.find_by_id(params[:user_id])
+    else
+      @list.user = current_user
+    end
+    
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
@@ -86,6 +88,6 @@ class ListsController < ApplicationController
     # end
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:note)
+      params.require(:list).permit(:note, :user_id)
     end
 end
