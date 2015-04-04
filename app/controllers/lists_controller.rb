@@ -36,8 +36,8 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
-    if params[:user_id]
-      @list.user = User.find_by_id(params[:user_id])
+    if params[:email]
+      @list.user = User.find_by_email(params[:email])
     else
       @list.user = current_user
     end
@@ -88,6 +88,6 @@ class ListsController < ApplicationController
     # end
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:note, :user_id)
+      params.require(:list).permit(:note, :email)
     end
 end
