@@ -10,9 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-
-     user = User.find_by_email([:email].downcase)
-        if user && user.authenticate([:password])
+    puts params[:email]
+     user = User.find_by_email(params[:email].downcase)
+        if user && user.authenticate(params[:password])
          render json: user
       else
          render json: 404
@@ -32,7 +32,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         sign_in @user 
