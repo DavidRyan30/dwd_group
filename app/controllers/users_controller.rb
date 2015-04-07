@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     puts params[:email]
      user = User.find_by_email(params[:email].downcase)
         if user && user.authenticate(params[:password])
+          sign_in
          render json: user
       else
          render json: 404

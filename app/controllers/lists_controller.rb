@@ -5,7 +5,7 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     if params[:email]
-      puts params[:email]
+      # puts params[:email]
       user = User.find_by_email(params[:email])
       puts user.f_name
       render json: user.lists.all()
