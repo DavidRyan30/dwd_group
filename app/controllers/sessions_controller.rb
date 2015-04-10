@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
           puts "Authenticated"
           sign_in user 
-          redirect_to root_path
+          format.html { redirect_to root_path, notice: 'Welcome to the jungle' }
+          format.json { render json: user}
+          # redirect_to root_path
         else
           puts "not Atuhenticated"
 			flash.now[:error] = 'Invalid email/password combination'          
