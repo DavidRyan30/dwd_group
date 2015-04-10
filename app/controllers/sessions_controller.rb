@@ -12,11 +12,11 @@ class SessionsController < ApplicationController
         user = User.find_by_email(params[:session][:email].downcase)
         if user && user.authenticate(params[:session][:password])
           sign_in user 
-          format.html { redirect_to root_path, notice: 'User was successfully updated.' }
+          format.html { redirect_to root_path, notice: 'You are logged in.' }
           format.json { render json: user}   
         else
-			flash.now[:error] = 'Invalid email/password combination'          
-			render 'new'
+    			flash.now[:error] = 'Invalid email/password combination'          
+    			render 'new'
         end
      end
 
