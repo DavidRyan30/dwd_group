@@ -3,20 +3,13 @@ class SessionsController < ApplicationController
 
 	end
        def create
-            @session = params[:session]
-            if @session == {}
-              user1 = User.find_by_email(params[:email])
-              @session = user.remember_token
-              params[:session] = @session
-            end
         user = User.find_by_email(params[:session][:email].downcase)
         if user && user.authenticate(params[:session][:password])
           sign_in user 
-          format.html { redirect_to root_path, notice: 'You are logged in.' }
-          format.json { render json: user}   
+          redirect_to root_path
         else
-    			flash.now[:error] = 'Invalid email/password combination'          
-    			render 'new'
+			flash.now[:error] = 'Invalid email/password combination'          
+			render 'new'
         end
      end
 
