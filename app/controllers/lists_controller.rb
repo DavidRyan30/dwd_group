@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
+    puts params[:email]
     if params[:email]
       # puts params[:email]
       user = User.find_by_email(params[:email])
