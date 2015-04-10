@@ -6,8 +6,10 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
           puts "Authenticated"
           sign_in user 
-          format.html { redirect_to root_path, notice: 'Welcome to the jungle' }
-          format.json { render json: user}
+          respond_to do |format|
+            format.html { redirect_to root_path, notice: 'Welcome to the jungle' }
+            format.json { render json: user}
+          end
           # redirect_to root_path
         else
           puts "not Atuhenticated"
