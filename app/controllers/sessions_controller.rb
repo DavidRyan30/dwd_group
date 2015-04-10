@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
     	def new
-        session = User.new()
-        format.html { render :new }
-        format.json { render json: session}
     	end
        def create
         user = User.find_by_email(params[:session][:email].downcase)
