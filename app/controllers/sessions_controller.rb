@@ -20,6 +20,10 @@ class SessionsController < ApplicationController
 
       def destroy
         sign_out
-        redirect_to signin_url
+        respond_to do |format| 
+          format.html {redirect_to signin_url}
+          format.json {}
+        end
+        
       end 
 end
