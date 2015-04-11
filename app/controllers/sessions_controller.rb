@@ -4,15 +4,13 @@ class SessionsController < ApplicationController
        def create
         user = User.find_by_email(params[:session][:email].downcase)
         if user && user.authenticate(params[:session][:password])
-          puts "Authenticated"
           sign_in user 
           respond_to do |format|
-            format.html { redirect_to root_path, notice: 'Welcome to the jungle' }
+            format.html { redirect_to root_path, error: 'YOU FORGET THE LIST' }
             format.json { render json: user}
           end
           # redirect_to root_path
         else
-          puts "not Atuhenticated"
 			flash.now[:error] = 'Invalid email/password combination'          
 			render 'new'
         end
