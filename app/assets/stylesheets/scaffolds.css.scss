@@ -19,8 +19,11 @@ pre {
 }
 
 a {
-  color: #000;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  color: #fff;
   padding: 3px;
+  background-color: #444;
   &:visited {
     color: #666;
   }
