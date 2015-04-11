@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
         sign_out
         respond_to do |format| 
           format.html {redirect_to signin_url}
-          format.json {}
+          format.json {render json: "loggedOut"}
         end
         
       end 
