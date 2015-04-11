@@ -99,6 +99,11 @@
       line-height: 1.7em;
     }
 
+    #nav_buttons {
+    background-color: #fff;
+
+    }
+
     #logo {
       float: left;
       margin-right: 10px;
@@ -118,61 +123,5 @@
 
      /* footer */
 
-    footer {
-      margin-top: 45px;
-      padding-top: 5px;
-      border-top: 1px solid #eaeaea;
-      color: #999;
-    }
-
-    footer a {
-      color: #555;
-    }  
-
-    footer a:hover { 
-      color: #222;
-    }
-
-    footer small {
-      float: left;
-    }
-
-    footer ul {
-      float: right;
-      list-style: none;
-    }
-
-    footer ul li {
-      float: left;
-      margin-left: 10px;
-    }
-    .container{
-      background-color: "#f7f4d2";
-    }
-    /* microposts */
-
-    .microposts {
-      list-style: none;
-      margin: 10px 0 0 0;
-
-      li {
-        padding: 10px 0;
-        border-top: 1px solid #e8e8e8;
-      }
-    }
-    .content {
-      display: block;
-    }
-    .timestamp {
-      color: gray;
-    }
-    .gravatar {
-      float: left;
-      margin-right: 10px;
-    }
-    aside {
-      textarea {
-        height: 100px;
-        margin-bottom: 5px;
-      }
-    } 
+  
+   
